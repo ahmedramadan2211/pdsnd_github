@@ -22,13 +22,13 @@ def get_filters():
     city = input('\nWould you like to see data for Chicago, New York, or Washington?\n').lower()
 
     while(True):
-        if(city == 'chicago' or city == 'new york' or city == 'washington' or city == 'all'):
+        if(city == 'chicago' or city == 'new york' or city == 'washington'):
             break
         else:
             city = input('Enter Correct city: ').lower()
 
     # get user input for month (all, january, february, ... , june)
-    month = input('\nWhich month? January, February, March, April, May, or June?\n').lower()
+    month = input('\nWhich month? January, February, March, April, May, June or all to display data of all months?\n').lower()
      #lower is used to get input in any format
 
     while(True):
@@ -144,12 +144,12 @@ def trip_duration_stats(df):
     # display total travel time
     total_travel_time = df['Trip Duration'].sum()
     time1 = total_travel_time
-    day = time1 // (24 * 3600)
-    time1 = time1 % (24 * 3600)
-    hour = time1 // 3600
-    time1 %= 3600
-    minutes = time1 // 60
-    time1 %= 60
+    day = time1 // (24 * 3600) #To convert to seconds to integer days
+    time1 = time1 % (24 * 3600) #To calcuate the rest of above division
+    hour = time1 // 3600 #To convert seconds to integer hours
+    time1 %= 3600 #To calculate the rest of above division in seconds
+    minutes = time1 // 60 # To convert to sec to integer min
+    time1 %= 60 # To convert decimal min to seconds
     seconds = time1
     print('\nTotal travel time is {} days {} hours {} minutes {} seconds'.format(day, hour, minutes, seconds))
 
