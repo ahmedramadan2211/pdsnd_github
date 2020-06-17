@@ -143,12 +143,12 @@ def trip_duration_stats(df):
     # display total travel time
     total_travel_time = df['Trip Duration'].sum()
     time1 = total_travel_time
-    day = time1 // (24 * 3600)
-    time1 = time1 % (24 * 3600)
-    hour = time1 // 3600
-    time1 %= 3600
-    minutes = time1 // 60
-    time1 %= 60
+    day = time1 // (24 * 3600) #To convert to seconds to integer days
+    time1 = time1 % (24 * 3600) #To calcuate the rest of above division
+    hour = time1 // 3600 #To convert seconds to integer hours
+    time1 %= 3600 #To calculate the rest of above division in seconds
+    minutes = time1 // 60 # To convert to sec to integer min
+    time1 %= 60 # To convert decimal min to seconds
     seconds = time1
     print('\nTotal travel time is {} days {} hours {} minutes {} seconds'.format(day, hour, minutes, seconds))
 
