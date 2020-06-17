@@ -221,7 +221,7 @@ def disp_raw_data(df):
             row_index = row_index + 5
         logic = input("\n Would you like to see five more rows of the data used to compute the stats? Please write 'yes' or 'no' \n").lower()
 
-
+# Gathering functions in terminal step
 def main():
     while True:
         city, month, day = get_filters()
