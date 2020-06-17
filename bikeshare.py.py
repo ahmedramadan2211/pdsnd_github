@@ -1,3 +1,4 @@
+# Getting all requested libraries
 import time
 import datetime
 import pandas as pd
@@ -17,7 +18,7 @@ def get_filters():
     """
     print('Hello! I am Ahmed, Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    
+
     city = input('\nWould you like to see data for Chicago, New York, or Washington?\n').lower()
 
     while(True):
@@ -25,7 +26,7 @@ def get_filters():
             break
         else:
             city = input('Enter Correct city: ').lower()
-            
+
     # get user input for month (all, january, february, ... , june)
     month = input('\nWhich month? January, February, March, April, May, or June?\n').lower()
      #lower is used to get input in any format
@@ -37,14 +38,14 @@ def get_filters():
             month = input('Enter valid month\n').lower()
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day =  input('Which day ? monday, tuesday, wednesday, thursday, friday, saturday , sunday or all to display data of all days?\n').lower()
-   
+
     while(True):
-        
+
         if(day == 'monday' or day == 'tuesday' or day == 'wednesday' or day == 'thursday' or day == 'friday' or day == 'saturday' or day == 'sunday' or day == 'all'):
             break
         else:
             day = input('Enter Correct day: ').lower()
-            
+
     print('-'*40)
     return city, month, day
 
@@ -108,7 +109,7 @@ def time_stats(df, month, day):
     print('Most popular hour is ' + str(most_common_hour))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40) 
+    print('-'*40)
 
 
 def station_stats(df):
@@ -206,7 +207,7 @@ def disp_raw_data(df):
     Displays 5 consecutive rows of the data used to compute the stats
     Input:
         the df with all the bikeshare data
-    Returns: 
+    Returns:
        none
     '''
     row_index = 0
