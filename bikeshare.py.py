@@ -27,7 +27,7 @@ def get_filters():
             city = input('Enter Correct city: ').lower()
 
     # get user input for month (all, january, february, ... , june)
-    month = input('\nWhich month? January, February, March, April, May, or June?\n').lower()
+    month = input('\nWhich month? January, February, March, April, May, June or all to display data of all months?\n').lower()
      #lower is used to get input in any format
 
     while(True):
